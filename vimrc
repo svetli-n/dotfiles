@@ -23,6 +23,7 @@ Plugin 'vcscommand.vim'
 Plugin 'majutsushi/tagbar'
 Plugin 'Lokaltog/vim-easymotion'
 Plugin 'mkitt/tabline.vim'
+Plugin 'Tabmerge'
 
 call vundle#end()           
 if has("autocmd")

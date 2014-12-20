@@ -83,6 +83,8 @@ alias la='ls -A'
 alias l='ls -CF'
 alias c='clear'
 alias rm='rm -i'
+alias python='python3'
+alias pip='pip3'
 
 # Alias definitions.
 # You may want to put all your additions into a separate file like

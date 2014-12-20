@@ -1,4 +1,3 @@
-
 set cursorcolumn
 set nocompatible            
 filetype off                 

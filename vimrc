@@ -1,4 +1,5 @@
 
+set cursorcolumn
 set nocompatible            
 filetype off                 
 
@@ -24,6 +25,7 @@ Plugin 'majutsushi/tagbar'
 Plugin 'Lokaltog/vim-easymotion'
 Plugin 'mkitt/tabline.vim'
 Plugin 'Tabmerge'
+Plugin 'tpope/vim-fugitive'
 
 call vundle#end()           
 if has("autocmd")
@@ -43,6 +45,7 @@ set t_Co=256
 set background=dark
 let g:solarize_termcolors=256
 colorscheme solarized
+
 
 "vim configuration
 set showmatch 
@@ -69,3 +72,6 @@ endfunction
 nnoremap <silent> t :TagbarToggle<CR>
 nnoremap <silent> d <C-]><CR> 
 nnoremap <silent> db <C-T><CR> 
+
+inoremap <expr> <C-j> pumvisible() ? "\<C-N>" : "\<C-j>"
+inoremap <expr> <C-k> pumvisible() ? "\<C-P>" : "\<C-k>"

@@ -1,5 +1,12 @@
 set cursorcolumn
 set nocompatible            
+set background=dark
+set showmatch 
+set tabstop=4
+set shiftwidth=4
+set expandtab
+set noswapfile
+
 filetype off                 
 
 set rtp+=~/.vim/bundle/Vundle.vim
@@ -14,7 +21,7 @@ Plugin 'dbext.vim'
 Plugin 'ervandew/supertab'
 Plugin 'kien/ctrlp.vim'
 Plugin 'dkprice/vim-easygrep.git'
-Plugin 'Solarized'
+Plugin 'altercation/vim-colors-solarized'
 Plugin 'joonty/vdebug.git'
 Plugin 'bling/vim-airline'
 Plugin 'christoomey/vim-tmux-navigator'
@@ -27,12 +34,14 @@ Plugin 'Tabmerge'
 Plugin 'tpope/vim-fugitive'
 
 call vundle#end()           
+
 if has("autocmd")
   filetype plugin indent on
 endif
-if has("syntax")
-  syntax on
-endif
+
+"if has("syntax")
+  "syntax on
+"endif
 
 "Plugins configuration
 let g:dbext_default_profile_mysql_local = 'type=MYSQL:user=rc:passwd=ala_rc:dbname=dpapp:extra=-t'
@@ -40,17 +49,11 @@ let g:dbext_default_profile_mysql_local = 'type=MYSQL:user=rc:passwd=ala_rc:dbna
 let g:EasyGrepRecursive=1
 let g:EasyGrepSearchCurrentBufferDir = 0
 
-set t_Co=256
-set background=dark
-let g:solarize_termcolors=256
+
+syntax enable
 colorscheme solarized
 
 
-"vim configuration
-set showmatch 
-set tabstop=4
-set shiftwidth=4
-set expandtab
 
 "key mappings
 let mapleader = "\<Space>"

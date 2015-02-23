@@ -1,6 +1,5 @@
 set cursorcolumn
 set nocompatible            
-set background=dark
 set showmatch 
 set tabstop=4
 set shiftwidth=4
@@ -21,17 +20,16 @@ Plugin 'dbext.vim'
 Plugin 'ervandew/supertab'
 Plugin 'kien/ctrlp.vim'
 Plugin 'dkprice/vim-easygrep.git'
-Plugin 'altercation/vim-colors-solarized'
-Plugin 'joonty/vdebug.git'
 Plugin 'bling/vim-airline'
 Plugin 'christoomey/vim-tmux-navigator'
 Plugin 'terryma/vim-expand-region' 
-Plugin 'vcscommand.vim'
 Plugin 'majutsushi/tagbar'
 Plugin 'Lokaltog/vim-easymotion'
 Plugin 'mkitt/tabline.vim'
 Plugin 'Tabmerge'
 Plugin 'tpope/vim-fugitive'
+Plugin 'flazz/vim-colorschemes'
+Plugin 'nvie/vim-flake8'
 
 call vundle#end()           
 
@@ -39,20 +37,19 @@ if has("autocmd")
   filetype plugin indent on
 endif
 
-"if has("syntax")
-  "syntax on
-"endif
+if has("syntax")
+  syntax on
+endif
 
 "Plugins configuration
-let g:dbext_default_profile_mysql_local = 'type=MYSQL:user=rc:passwd=ala_rc:dbname=dpapp:extra=-t'
 
 let g:EasyGrepRecursive=1
 let g:EasyGrepSearchCurrentBufferDir = 0
 
 
-syntax enable
-colorscheme solarized
-
+colorscheme lucius
+LuciusDark
+let g:lucius_no_term_bg = 0
 
 
 "key mappings

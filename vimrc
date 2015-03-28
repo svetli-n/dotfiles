@@ -5,6 +5,7 @@ set tabstop=4
 set shiftwidth=4
 set expandtab
 set noswapfile
+set incsearch
 
 filetype off                 
 

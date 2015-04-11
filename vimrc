@@ -6,6 +6,7 @@ set shiftwidth=4
 set expandtab
 set noswapfile
 set incsearch
+set tags=tags;
 
 filetype off                 
 
@@ -31,6 +32,7 @@ Plugin 'Tabmerge'
 Plugin 'tpope/vim-fugitive'
 Plugin 'flazz/vim-colorschemes'
 Plugin 'nvie/vim-flake8'
+Plugin 'tpope/vim-obsession'
 
 call vundle#end()           
 
@@ -47,9 +49,12 @@ endif
 let g:EasyGrepRecursive=1
 let g:EasyGrepSearchCurrentBufferDir = 0
 
-colorscheme lucius
-LuciusDark
-let g:lucius_no_term_bg = 0
+set t_Co=256
+set background=dark
+colorscheme solarized 
+
+
+source ~/queries/db_credentials.txt 
 
 
 "key mappings

@@ -7,6 +7,7 @@ set expandtab
 set noswapfile
 set incsearch
 set tags=tags;
+set number
 
 filetype off                 
 
@@ -53,9 +54,14 @@ set t_Co=256
 set background=dark
 colorscheme solarized 
 
+let g:syntastic_python_python_exec = '/usr/bin/python2.6'
+let g:syntastic_python_checkers = ['flake8']
+let g:syntastic_python_checker_args="--ignore=E501"
+
+let NERDTreeShowHidden=1
+let NERDTreeIgnore = ['\.pyc$']
 
 source ~/queries/db_credentials.txt 
-
 
 "key mappings
 let mapleader = "\<Space>"

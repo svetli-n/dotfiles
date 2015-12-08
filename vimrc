@@ -42,6 +42,7 @@ Plugin 'tpope/vim-obsession'
 Plugin 'AndrewRadev/linediff.vim'
 Plugin 'rking/ag.vim'
 Plugin 'Raimondi/delimitMate'
+Plugin 'elzr/vim-json'
 
 call vundle#end()           
 
@@ -62,9 +63,10 @@ set t_Co=256
 set background=dark
 colorscheme solarized 
 
-let g:syntastic_python_python_exec = '/usr/bin/python2.6'
+let g:syntastic_python_python_exec = '/usr/bin/python'
 let g:syntastic_python_checkers = ['flake8']
-let g:syntastic_python_checker_args="--ignore=E501"
+"let g:syntastic_python_checker_args="--ignore=E501"
+"autocmd BufWritePost *.py call Flake8()
 
 "let g:syntastic_java_checkers = ['checkstyle', 'javac']
 "let g:syntastic_java_javac_classpath = './*.java:/home/svetlin/workspace/sandbox/java/spring_restful_web_service/build/libs/lib/*.jar'
@@ -82,7 +84,6 @@ let g:airline#extensions#branch#enabled = 1
 
 let delimitMate_expand_cr = 0
 
-source ~/queries/db_credentials.txt 
 
 "key mappings
 let mapleader = "\<Space>"
@@ -118,6 +119,12 @@ inoremap <Down> <Nop>
 inoremap <Left> <Nop>
 inoremap <Right> <Nop>
 inoremap <BS> <Nop>
+
+
+""Eclim mappings
+"nnoremap jd :JavaDocPreview<CR>
+"nnoremap js :JavaSearch<CR>
+"nnoremap ji :JavaImport<CR>
 
 function! InsertPdb()
     let trace = expand("import ipdb; ipdb.set_trace()")

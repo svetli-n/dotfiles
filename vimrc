@@ -121,11 +121,6 @@ inoremap <Right> <Nop>
 inoremap <BS> <Nop>
 
 
-""Eclim mappings
-"nnoremap jd :JavaDocPreview<CR>
-"nnoremap js :JavaSearch<CR>
-"nnoremap ji :JavaImport<CR>
-
 function! InsertPdb()
     let trace = expand("import ipdb; ipdb.set_trace()")
     execute "normal o".trace

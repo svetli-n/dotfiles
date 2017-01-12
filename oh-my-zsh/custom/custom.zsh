@@ -17,4 +17,6 @@ setxkbmap -option caps:none
 export WORKON_HOME=~/.virtualenvs
 source /usr/bin/virtualenvwrapper.sh
 
-export GOPATH=~/go
+export GOPATH=~/workspace/go
+
+export PATH=$PATH:/home/svetlin/workspace/go/bin

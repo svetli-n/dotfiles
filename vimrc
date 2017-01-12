@@ -48,6 +48,7 @@ Plugin 'valloric/youcompleteme'
 Plugin 'coacher/vim-virtualenv'
 Plugin 'tell-k/vim-autopep8'
 Plugin 'fatih/vim-go'
+Plugin 'vim-scala'
 
 call vundle#end()           
 
@@ -98,10 +99,10 @@ let g:ycm_autoclose_preview_window_after_completion=1
 let g:ycm_goto_buffer_command = 'horizontal-split'
 
 
+let GOPATH = "/home/svetlin/workspace/go"
 
 "key mappings
 let mapleader = "\<Space>"
-
 
 autocmd Filetype python nnoremap <leader>f :YcmCompleter GoTo<CR>
 autocmd Filetype python nnoremap <leader>r :YcmCompleter GoToReferences<CR>
@@ -115,11 +116,12 @@ au FileType go nmap <Leader>b <Plug>(go-build)
 au FileType go nmap <Leader>t <Plug>(go-test)
 au FileType go nmap <Leader>c <Plug>(go-coverage)
 
-au FileType go nmap <Leader>ds <Plug>(go-def-split)
+au FileType go nmap <Leader>f <Plug>(go-def-split)
 au FileType go nmap <Leader>dv <Plug>(go-def-vertical)
 au FileType go nmap <Leader>dt <Plug>(go-def-tab)
 
-au FileType go nmap <Leader>gd <Plug>(go-doc)
+"au FileType go nmap <Leader>gd <Plug>(go-doc)
+au FileType go nmap <Leader>d <Plug>(go-doc)
 au FileType go nmap <Leader>gv <Plug>(go-doc-vertical)
 au FileType go nmap <Leader>gb <Plug>(go-doc-browser)
 
@@ -161,6 +163,11 @@ autocmd Filetype java nnoremap <Leader>d :JavaDocPreview<CR>
 autocmd Filetype java nnoremap <Leader>f :JavaSearchContext<CR>
 autocmd Filetype java nnoremap <Leader>n :JavaNew class 
 autocmd Filetype java nnoremap <Leader>r :JavaRename
+
+"Eclim Scala mappings
+autocmd Filetype scala inoremap <Tab> <C-X><C-O>
+autocmd Filetype scala nnoremap <Leader>f :ScalaSearch<CR>
+autocmd Filetype scala nnoremap <Leader>i :ScalaImport<CR>
 
 
 vmap v <Plug>(expand_region_expand)

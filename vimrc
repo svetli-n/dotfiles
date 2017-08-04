@@ -14,7 +14,8 @@ set wildmode=list,full
 set cc=80
 set cursorcolumn
 
-filetype off                 
+" filetype off                 
+filetype plugin on
 
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
@@ -25,7 +26,7 @@ Plugin 'tpope/vim-surround'
 Plugin 'scrooloose/syntastic'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'dbext.vim'
-"Plugin 'ervandew/supertab'
+" Plugin 'ervandew/supertab'
 Plugin 'kien/ctrlp.vim'
 Plugin 'bling/vim-airline'
 Plugin 'christoomey/vim-tmux-navigator'
@@ -50,6 +51,8 @@ Plugin 'coacher/vim-virtualenv'
 Plugin 'tell-k/vim-autopep8'
 Plugin 'fatih/vim-go'
 Plugin 'mxw/vim-jsx'
+Plugin 'ensime/ensime-vim'
+Plugin 'derekwyatt/vim-scala'
 
 call vundle#end()           
 
@@ -111,11 +114,11 @@ let g:jedi#completions_command = ""
 let g:jedi#show_call_signatures = "1"
 let g:jedi#show_call_signatures_delay = 0
 
-" let g:jedi#show_call_signatures = 0
-" let g:jedi#popup_on_dot = 0
+let g:jedi#show_call_signatures = 0
+let g:jedi#popup_on_dot = 0
 
-" let g:pymode_rope_goto_definition_bind = "<C-d>"
-" let g:pymode_doc_bind = "<C-d>"
+let g:pymode_rope_goto_definition_bind = "<C-d>"
+let g:pymode_doc_bind = "<C-d>"
 
 let GOPATH = "/home/svetlin/workspace/go"
 
@@ -140,6 +143,10 @@ autocmd Filetype java nnoremap <Leader>k :JavaCorrect<CR>
 " Scala eclim mappings
 autocmd Filetype scala nnoremap <leader>f :ScalaSearch<CR>
 autocmd Filetype scala nnoremap <leader>i :ScalaImport<CR>
+
+autocmd BufWritePost *.scala silent :EnTypeCheck
+nnoremap <localleader>t :EnTypeCheck<CR>
+let ensime_server_v2=1
 
 " Python mappings
 autocmd Filetype python nnoremap <leader>f :YcmCompleter GoTo<CR>
